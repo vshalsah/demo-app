@@ -2,9 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Compile') {
             steps {
-                echo 'Code successfully pulled from GitHub'
+                bat 'javac Abc.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                bat 'java Abc'
             }
         }
     }
